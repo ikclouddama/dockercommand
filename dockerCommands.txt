@@ -1,0 +1,12 @@
+docker rm -f $(docker ps -aq --filter status="exited")
+docker ps -aq --filter status="exited"
+docker ps -aq --filter status="running"
+docker rmi -f $(docker images -aq)
+
+# How to troubleshoot a Docker container
+docker top +contID
+docker stats +contID
+docker logs +contID
+docker inspect  +contID
+docker attach +contID
+
